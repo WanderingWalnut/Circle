@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Website</title>
+    <style>
+        /* Include the custom font */
+        @font-face {
+            font-family: 'TAN St. Canard';
+            src: url('fonts/TANStCanard.woff2') format('woff2'),
+                 url('fonts/TANStCanard.woff') format('woff'),
+                 url('fonts/TANStCanard.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            background-color: #0052ff;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'TAN St. Canard', Arial, sans-serif;
+        }
+        #circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        #text-area {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #0052ff;
+            color: #fff;
+            font-family: 'TAN St. Canard', Arial, sans-serif;
+            font-size: 40px;
+            /* Center the content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #text-area p {
+            margin: 0;
+        }
+        .icons {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+        }
+        .icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 40px;
+        }
+    </style>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="circle"></div>
+
+    <div id="text-area">
+        <p>CA: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+        <div class="icons">
+            <a href="https://t.me/your_telegram" target="_blank" aria-label="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://x.com/your_username" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var circle = document.getElementById('circle');
+            circle.style.left = (e.clientX - 150) + 'px';
+            circle.style.top = (e.clientY - 150) + 'px';
+        });
+    </script>
+</body>
+</html>
